@@ -356,7 +356,7 @@ body{
 }
 .skills {
   background-color: #000;
-  color: #fff;
+  color: #040315;
   padding: 2rem;
 }
 
@@ -402,7 +402,7 @@ body{
   overflow: hidden;
   background-color: #2e2e2e;
   padding: 0 1rem;
-  color: #ccc;
+  color: hwb(232 13% 47%);
   font-size: 0.95rem;
   transition: max-height 0.5s ease, padding 0.5s ease;
 }

@@ -3,18 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vema Preethika</title>
+    <title>Sowjanya Thatavarthi</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:wght@300;400;500;600;700&family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css"> 
+    <style>
+        /* Skills Section */
+        .skills {
+          max-width: 800px;
+          margin: 50px auto;
+          padding: 20px;
+        }
+        .skill-category {
+          margin-bottom: 15px;
+          border: 1px solid #ddd;
+          border-radius: 8px;
+          overflow: hidden;
+        }
+        .category-header {
+          display: block;
+          padding: 12px 15px;
+          font-weight: 600;
+          background: #f5f5f5;
+          cursor: pointer;
+          transition: background 0.3s;
+        }
+        .category-header:hover {
+          background: #eaeaea;
+        }
+        .skill-category input {
+          display: none; /* hide checkboxes */
+        }
+        .category-content {
+          max-height: 0;
+          overflow: hidden;
+          padding: 0 15px;
+          background: #fff;
+          transition: max-height 0.4s ease, padding 0.3s ease;
+        }
+        .skill-category input:checked ~ .category-content {
+          max-height: 500px; /* enough space for multiple skills */
+          padding: 12px 15px;
+        }
+    </style>
 </head>
 <body>
     <div class="main">
         <div class="nav">
             <div class="nav-main">
-                <a href="#home" class="text">Vema Preethika</a>
+                <a href="#home" class="text">Sowjanya Thatavarthi</a>
             </div>
             <input type="checkbox" id="check">
             <label for="check" class="bar">
@@ -25,152 +64,154 @@
                     <li><a href="#home">Home</a></li>
                     <li><a href="#about">About</a></li>
                     <li><a href="#project">Project</a></li>
+                    <li><a href="#skills">Skills</a></li>
                     <li><a href="#resume">Resume</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </div>
-            
         </div>
         <div class="home" id="home">
             <h1>Welcome to My Portfolio</h1>
-            <p>Hello! I'm Vema Preethika, and this is where I showcase my journey, skills, and projects.</p>
+            <p>Hello! I'm Sowjanya Thatavarthi, and this is where I showcase my journey, skills, and projects.</p>
             <img src="img.png" alt="Random Image">
         </div>
-         <div class="abouts" id="about">
+        <div class="abouts" id="about">
             <h2 class="head">About Me</h2>
             <div class="about">
-                <img src="preethi_img.jpg" alt="Vema Preethika image">
+                <img src="my photo.jpeg" alt="Sowjanya Thatavarthi image">
                 <div class="about-info">
-                    <p>Hello, I'm a tech enthusiast with a deep passion for building real-world solutions.I always wanted to develop something on my own and learn lot of great things while developiing that make an impact on me.But beyond tech, I'm someone who's always on a journey of growth.</p>
-                    <p>Believe it or not, I used to be that quiet, reserved student who barely spoke up. But over time, I've transformed into someone who's obsessed with interacting, communicating, and leading. This shift has opened up a whole new world for me — the more I connect with people, the more excited I am to learn, explore new ideas. And that's exactly what keeps me moving forward!</p>
+                    <p>Hi, I'm Sowjanya Thatavarthi, a Computer Science Engineering student specializing in Cyber Security with a passion for building user-centric digital products. My journey through AI, machine learning, and full-stack development has taught me that great products are created by understanding user problems first and then leveraging technology to solve them effectively.
+
+                    </p><p>Through internships, hackathons, and academic projects, I have gained experience in collaborating with teams, analyzing requirements, and developing solutions that create real-world impact. I enjoy breaking down complex problems, making data-driven decisions, and continuously learning about product management, Agile methodologies, and customer-focused innovation.</p>
+
+<p> As an aspiring Product Owner, my goal is to bridge the gap between technology, business, and user needs by building products that are intuitive, scalable, and meaningful </p>
+                    </p>
                 </div>
             </div>
         </div>
         <div class="project" id="project">
-            <h2  class="head">Projects</h2>
+            <h2 class="head">Projects</h2>
             <div class="project-cards">
                 <div class="card">
-                    <img src="project1.jpg" alt="Project 1">
+                    <img src="QRX Pic.png" alt="Project 1">
                     <div class="card-content">
-                        <h3>Virtual-Mouse</h3>
-                        <p>This project transforms hand gestures into mouse actions using a webcam. Built with Python, OpenCV, and Mediapipe, it detects hand landmarks in real time to control cursor movement.</p>
-                        <a href="https://github.com/preethika-16/Virtual-Mouse" target="_blank">
+                        <h3>QRx - A Smart Health AID</h3>
+                        <p>QRx – Smart Health Aid is a user-centric healthcare platform that enables individuals to securely store and instantly share critical medical information through QR codes during emergencies. It improves accessibility to essential health records while ensuring a seamless and secure user experience.</p>
+                        <a href="https://qrx-smart-health-aid.vercel.app/" target="_blank">
+                        <i></i> Website Link
+                        </a>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="Water Quality.jpg" alt="Project 2">
+                    <div class="card-content">
+                        <h3>Water Quality Prediction</h3>
+                        <p>Focused on predicting key water quality parameters using machine learning, with the goal of early pollution detection and prompting sustainability through data-driven insights.</p>
+                        <a href="https://github.com/SowjanyaT26/WaterQualityPrediction.git" target="_blank">
                         <i class="fab fa-github"></i> View on GitHub
                         </a>
                     </div>
                 </div>
                 <div class="card">
-                    <img src="project2.png" alt="Project 2">
+                    <img src="encryptbox.jpeg" alt="Project 3">
                     <div class="card-content">
-                        <h3>Amazon-Clone</h3>
-                        <p>A front-end replica of the Amazon e-commerce website built using HTML and CSS.t features a responsive layout, product categories, navigation bar, search bar, and product listings.</p>
-                        <a href="https://github.com/preethika-16/amazon-clone" target="_blank">
+                        <h3>Encrypt Box</h3>
+                        <p>Built a secure file-sharing web app with user authentication, encrypted uploads, unique download links expiring after 24 hours, and email-based sharing with token validation</p>
+                        <a href="https://github.com/SowjanyaT26/Encrypt-Box.git" target="_blank">
                         <i class="fab fa-github"></i> View on GitHub
                         </a>
                     </div>
                 </div>
                 <div class="card">
-                    <img src="project3.png" alt="Project 3">
+                    <img src="feedesurio.png" alt="Project 4">
                     <div class="card-content">
-                        <h3>Flappy Bird</h3>
-                        <p>Built as a desktop application, it demonstrates object-oriented programming principles, game loop logic, and basic GUI rendering.</p>
-                        <a href="https://github.com/preethika-16/flappybird" target="_blank">
+                        <h3>Feedesurio - Desi Daan</h3>
+                        <p>It is a frontend application connecting food donors with receivers, reducing food waste by facilitating donations, volunteer work, and food distribution.</p>
+                        <a href="https://github.com/SowjanyaT26/Feedesurio---Desi-Daan.git" target="_blank">
                         <i class="fab fa-github"></i> View on GitHub
                         </a>
                     </div>
                 </div>
                 <div class="card">
-                    <img src="project4.jpeg" alt="Project 4">
                     <div class="card-content">
-                        <h3>Spotify-Clone</h3>
-                        <p>A front-end clone of the Spotify music streaming platform, created using HTML and CSS.The dark-themed, responsive layout simulates Spotify's look and feel.</p>
-                        <a href="https://github.com/preethika-16/Spotify-Clone" target="_blank">
-                        <i class="fab fa-github"></i> View on GitHub
+                        <h2>Loading...</h2>
+                        <a href="" target="_blank">
                         </a>
                     </div>
+                </div>
                 </div>
             </div>
         </div>
+        <!-- Updated Skills Section -->
         <section class="skills" id="skills">
-  <h2>My Skills</h2>
-
-  <div class="skill">
-    <input type="checkbox" id="skill-html">
-    <label for="skill-html" class="skill-header">
-      <i class="fab fa-html5"></i> HTML
-    </label>
-    <div class="skill-content">
-      <p>Creating semantic and accessible web pages using HTML5. Focused on clean structure.</p>
-    </div>
-  </div>
-
-  <div class="skill">
-    <input type="checkbox" id="skill-css">
-    <label for="skill-css" class="skill-header">
-      <i class="fab fa-css3-alt"></i> CSS
-    </label>
-    <div class="skill-content">
-      <p>Responsive design using CSS3. Proficient with Flexbox, Grid, animations.</p>
-    </div>
-  </div>
-
-  <div class="skill">
-    <input type="checkbox" id="skill-python">
-    <label for="skill-python" class="skill-header">
-      <i class="fab fa-python"></i> Python
-    </label>
-    <div class="skill-content">
-      <p>Web development, automation using Python. Familiar with frameworks like Django and Flask.</p>
-    </div>
-  </div>
-
-  <div class="skill">
-    <input type="checkbox" id="skill-java">
-    <label for="skill-java" class="skill-header">
-      <i class="fab fa-java"></i> Java
-    </label>
-    <div class="skill-content">
-      <p>Object-oriented programming, Game development using Java.</p>
-    </div>
-  </div>
-
-  <div class="skill">
-    <input type="checkbox" id="skill-dsa">
-    <label for="skill-dsa" class="skill-header">
-      <i class="fas fa-code"></i> DSA
-    </label>
-    <div class="skill-content">
-      <p>Mastering data structures and algorithms. Proficient in solving problems efficiently using arrays, trees, graphs.</p>
-    </div>
-  </div>
-
-  <div class="skill">
-    <input type="checkbox" id="skill-linux">
-    <label for="skill-linux" class="skill-header">
-      <i class="fab fa-linux"></i> Linux & Windows
-    </label>
-    <div class="skill-content">
-      <p>Experience with both Linux and Windows operating systems. Knowledge of command-line tools and software management.</p>
-    </div>
-  </div>
-</section>
-
+          <h2>My Skills</h2>
+          <p style="color: white;">       Drag to view</p>
+          <!-- Programming languages -->
+        <div class="skill-category"> 
+            <input type="checkbox" id="programskill">
+        <label for="programskill" class="category-header">Product & business</label>
+        <div class="category-content"> 
+          <p><b>Product Management, Agile Methodologies, Scrum, Product Lifecycle, Requirement Analysis, User Story Mapping, Feature Prioritization</p> 
+          </div>
+         </div>
+          <!-- Web Development Skills -->
+          <div class="skill-category">
+            <input type="checkbox" id="webdev">
+            <label for="webdev" class="category-header">Programming & Databases</label>
+            <div class="category-content">
+              <p><b>Python, Java, C, SQL, Firebase</b></p>
+              
+            </div>
+          </div>
+          <!-- Cybersecurity Skills -->
+           <div class="skill-category"> 
+              <input type="checkbox" id="cyber"> 
+              <label for="cyber" class="category-header">Web Technologies</label>
+              <div class="category-content"> 
+          <p><b>React.js, Typescript, HTML, CSS, Streamlit</b></p>   
+          </div>
+         </div>
+         <!-- Cybersecurity Skills -->
+           <div class="skill-category"> 
+              <input type="checkbox" id="cyber"> 
+              <label for="cyber" class="category-header">AI & Data Anlytics</label>
+              <div class="category-content"> 
+          <p><b>Machine Learning, Scikit-learn, Pandas, Generative AI, Prompt Engineering</b></p>   
+          </div>
+         </div>
+         <!-- Cybersecurity Skills -->
+           <div class="skill-category"> 
+              <input type="checkbox" id="cyber"> 
+              <label for="cyber" class="category-header">Tools & Platforms</label>
+              <div class="category-content"> 
+          <p><b>Git, GitHub, Vercel, VS Code</b></p>   
+          </div>
+         </div>
+          <!-- Cybersecurity Skills -->
+           <div class="skill-category"> 
+              <input type="checkbox" id="cyber"> 
+              <label for="cyber" class="category-header">Soft Skills</label>
+              <div class="category-content"> 
+          <p><b>Analytical Thinking, Problem Solving, Cross-functional Collaboration, Communication, Stakeholder Management, Teamwork</b></p>   
+          </div>
+         </div>
+          
+        </section>
         <div class="resume" id="resume">
             <h2>Resume</h2>
             <p>You can view or download my resume using the options below.</p>
             <div class="resume-buttons">
-                <a href="My_Resume.pdf" class="view-btn" target="_blank">
+                <a href="Sowjanya_Resume (8).pdf" class="view-btn" target="_blank">
                     <i class="fa-solid fa-eye"></i> View Resume
                 </a>
-                <a href="My_Resume.pdf" class="download-btn" download>
-                    <i class="fa-solid fa-download "></i> Download Resume
+                <a href="Sowjanya_Resume (8).pdf" class="download-btn" download>
+                    <i class="fa-solid fa-download"></i> Download Resume
                 </a>
             </div>
         </div>
         <div class="contact" id="contact">
             <h2>Contact Me</h2>
             <p>If you'd like to get in touch, feel free to send me a message!</p>
-
             <form class="contact-form" action="https://formsubmit.co/preethikavema@gmail.com" method="POST">
                 <input type="hidden" name="_captcha" value="false">
                 <input type="hidden" name="_subject" value="New Portfolio Message">
@@ -180,20 +221,17 @@
                 <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
                 <button type="submit">Send Message</button>
             </form>
-
             <div class="social-links">
-                <a href="https://www.linkedin.com/in/preethika-vema-384888316" target="_blank"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
-                <a href="https://github.com/preethika-16" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a>
-                <a href="mailto:preethikavema@gmail.com"><i class="fa-solid fa-envelope"></i> Email</a>
+                <a href="https://www.linkedin.com/in/sowjanya-thatavarthi-254a882bb/" target="_blank"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+                <a href="https://github.com/SowjanyaT26" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a>
+                <a href="mailto:Sowjanyathatavarthi2601@gmail.com"><i class="fa-solid fa-envelope"></i> Email</a>
+                <a> +91 9247700469 </a>
             </div>
         </div>
-        <div class="foot">
-
-        </div>
-
+        <div class="foot"></div>
     </div>
     <footer>
-        <p class="footer">&copy; 2025 Vema Preethika. All rights reserved.</p>
+        <p class="footer">&copy; 2026 Sowjanya Thatavarthi. All rights reserved.</p>
     </footer>
 </body>
-</html>
+</html> 
