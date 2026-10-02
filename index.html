@@ -1,237 +1,3188 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sowjanya Thatavarthi</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:wght@300;400;500;600;700&family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css"> 
-    <style>
-        /* Skills Section */
-        .skills {
-          max-width: 800px;
-          margin: 50px auto;
-          padding: 20px;
-        }
-        .skill-category {
-          margin-bottom: 15px;
-          border: 1px solid #ddd;
-          border-radius: 8px;
-          overflow: hidden;
-        }
-        .category-header {
-          display: block;
-          padding: 12px 15px;
-          font-weight: 600;
-          background: #f5f5f5;
-          cursor: pointer;
-          transition: background 0.3s;
-        }
-        .category-header:hover {
-          background: #eaeaea;
-        }
-        .skill-category input {
-          display: none; /* hide checkboxes */
-        }
-        .category-content {
-          max-height: 0;
-          overflow: hidden;
-          padding: 0 15px;
-          background: #fff;
-          transition: max-height 0.4s ease, padding 0.3s ease;
-        }
-        .skill-category input:checked ~ .category-content {
-          max-height: 500px; /* enough space for multiple skills */
-          padding: 12px 15px;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <meta
+    name="description"
+    content="Sowjanya Thatavarthi — AI/ML, Full-Stack Developer and Product-focused Computer Science student."
+  />
+
+  <title>Sowjanya Thatavarthi | AI • Product • Engineering</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <!-- Font Awesome -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+  />
+
+  <style>
+
+    /* ================================
+       GLOBAL
+    ================================= */
+
+    :root {
+      --bg: #080b14;
+      --bg-soft: #0d1220;
+      --card: rgba(17, 24, 39, 0.72);
+      --card-solid: #111827;
+
+      --text: #f4f7fb;
+      --muted: #9aa6ba;
+
+      --line: rgba(255, 255, 255, 0.09);
+
+      --purple: #8b5cf6;
+      --cyan: #22d3ee;
+
+      --green: #34d399;
+
+      --radius: 24px;
+
+      --max-width: 1180px;
+
+      --shadow: 0 25px 80px rgba(0, 0, 0, 0.35);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 90px;
+    }
+
+    body {
+      font-family: "DM Sans", sans-serif;
+      color: var(--text);
+
+      background:
+        radial-gradient(
+          circle at 15% 15%,
+          rgba(139, 92, 246, 0.14),
+          transparent 28%
+        ),
+        radial-gradient(
+          circle at 85% 10%,
+          rgba(34, 211, 238, 0.10),
+          transparent 25%
+        ),
+        var(--bg);
+
+      line-height: 1.7;
+      overflow-x: hidden;
+
+      transition: background 0.3s ease;
+    }
+
+    body.light {
+      --bg: #f6f8fc;
+      --bg-soft: #ffffff;
+      --card: rgba(255, 255, 255, 0.85);
+      --card-solid: #ffffff;
+
+      --text: #111827;
+      --muted: #5d6879;
+
+      --line: rgba(15, 23, 42, 0.10);
+
+      background:
+        radial-gradient(
+          circle at 10% 10%,
+          rgba(139, 92, 246, 0.12),
+          transparent 28%
+        ),
+        #f6f8fc;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    button,
+    input,
+    textarea {
+      font: inherit;
+    }
+
+    .container {
+      width: min(
+        var(--max-width),
+        calc(100% - 40px)
+      );
+
+      margin: auto;
+    }
+
+    .section {
+      padding: 105px 0;
+    }
+
+    /* ================================
+       SECTION HEADINGS
+    ================================= */
+
+    .eyebrow {
+      display: inline-flex;
+
+      align-items: center;
+      gap: 8px;
+
+      padding: 7px 12px;
+
+      border: 1px solid var(--line);
+
+      border-radius: 999px;
+
+      color: #c7d2fe;
+
+      background: rgba(139, 92, 246, 0.08);
+
+      font-size: 0.82rem;
+      font-weight: 700;
+
+      letter-spacing: 0.04em;
+
+      text-transform: uppercase;
+    }
+
+    body.light .eyebrow {
+      color: #6d28d9;
+    }
+
+    .section-head {
+      max-width: 700px;
+      margin-bottom: 45px;
+    }
+
+    .section-head h2 {
+      font-family: "Space Grotesk", sans-serif;
+
+      font-size: clamp(2rem, 4vw, 3.2rem);
+
+      line-height: 1.1;
+
+      margin: 14px 0;
+    }
+
+    .section-head p {
+      color: var(--muted);
+      font-size: 1.03rem;
+    }
+
+    .gradient-text {
+      background:
+        linear-gradient(
+          100deg,
+          var(--purple),
+          var(--cyan)
+        );
+
+      -webkit-background-clip: text;
+      background-clip: text;
+
+      color: transparent;
+    }
+
+    /* ================================
+       NAVBAR
+    ================================= */
+
+    .nav-wrap {
+      position: fixed;
+
+      top: 0;
+      left: 0;
+      right: 0;
+
+      z-index: 1000;
+
+      background: rgba(8, 11, 20, 0.72);
+
+      backdrop-filter: blur(18px);
+
+      border-bottom: 1px solid var(--line);
+    }
+
+    body.light .nav-wrap {
+      background: rgba(246, 248, 252, 0.76);
+    }
+
+    nav {
+      height: 76px;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: space-between;
+    }
+
+    .brand {
+      font-family: "Space Grotesk";
+
+      font-size: 1.1rem;
+
+      font-weight: 700;
+    }
+
+    .brand span {
+      color: var(--cyan);
+    }
+
+    .nav-links {
+      display: flex;
+
+      gap: 27px;
+
+      align-items: center;
+
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+
+      font-size: 0.92rem;
+
+      font-weight: 600;
+
+      transition: 0.25s;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--text);
+    }
+
+    .nav-actions {
+      display: flex;
+      gap: 10px;
+    }
+
+    .icon-btn,
+    .menu-btn {
+      width: 40px;
+      height: 40px;
+
+      border-radius: 12px;
+
+      border: 1px solid var(--line);
+
+      background: var(--card);
+
+      color: var(--text);
+
+      cursor: pointer;
+    }
+
+    .menu-btn {
+      display: none;
+    }
+
+    /* ================================
+       HERO
+    ================================= */
+
+    .hero {
+      min-height: 100vh;
+
+      display: grid;
+
+      place-items: center;
+
+      padding-top: 76px;
+    }
+
+    .hero-grid {
+      display: grid;
+
+      grid-template-columns: 1.15fr 0.85fr;
+
+      gap: 60px;
+
+      align-items: center;
+    }
+
+    .hero h1 {
+      font-family: "Space Grotesk";
+
+      font-size: clamp(3rem, 7vw, 6.2rem);
+
+      line-height: 0.98;
+
+      letter-spacing: -0.055em;
+
+      margin: 20px 0;
+    }
+
+    .hero-copy {
+      font-size: 1.1rem;
+
+      color: var(--muted);
+
+      max-width: 650px;
+    }
+
+    .hero-buttons {
+      display: flex;
+
+      gap: 14px;
+
+      flex-wrap: wrap;
+
+      margin-top: 30px;
+    }
+
+    .btn {
+      display: inline-flex;
+
+      align-items: center;
+
+      gap: 9px;
+
+      padding: 12px 18px;
+
+      border-radius: 13px;
+
+      border: 1px solid var(--line);
+
+      font-weight: 700;
+
+      transition: 0.25s;
+
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+    }
+
+    .btn-primary {
+      background:
+        linear-gradient(
+          100deg,
+          var(--purple),
+          #6d5dfc
+        );
+
+      border: none;
+    }
+
+    .btn-secondary {
+      background: var(--card);
+    }
+
+    .hero-meta {
+      display: flex;
+
+      gap: 24px;
+
+      flex-wrap: wrap;
+
+      margin-top: 28px;
+
+      color: var(--muted);
+
+      font-size: 0.9rem;
+    }
+
+    .hero-meta i {
+      color: var(--cyan);
+
+      margin-right: 7px;
+    }
+
+    /* ================================
+       HERO PROFILE CARD
+    ================================= */
+
+    .hero-card {
+      min-height: 440px;
+
+      border: 1px solid var(--line);
+
+      border-radius: 32px;
+
+      background: var(--card);
+
+      box-shadow: var(--shadow);
+
+      backdrop-filter: blur(18px);
+
+      padding: 28px;
+
+      position: relative;
+
+      overflow: hidden;
+    }
+
+    .hero-card::before {
+      content: "";
+
+      position: absolute;
+
+      width: 260px;
+      height: 260px;
+
+      border-radius: 50%;
+
+      background: rgba(139, 92, 246, 0.22);
+
+      filter: blur(50px);
+
+      top: -80px;
+      right: -70px;
+    }
+
+    .profile-photo {
+      width: 210px;
+      height: 210px;
+
+      border-radius: 50%;
+
+      object-fit: cover;
+
+      margin: 25px auto 20px;
+
+      border: 4px solid rgba(255, 255, 255, 0.08);
+
+      box-shadow:
+        0 0 0 12px rgba(139, 92, 246, 0.06);
+    }
+
+    .hero-card h3 {
+      text-align: center;
+
+      font-family: "Space Grotesk";
+
+      font-size: 1.35rem;
+    }
+
+    .hero-card p {
+      text-align: center;
+
+      color: var(--muted);
+
+      margin-top: 5px;
+    }
+
+    .floating-chip {
+      position: absolute;
+
+      padding: 10px 13px;
+
+      border-radius: 13px;
+
+      background: var(--card-solid);
+
+      border: 1px solid var(--line);
+
+      font-size: 0.8rem;
+
+      font-weight: 700;
+
+      box-shadow: var(--shadow);
+    }
+
+    .chip-one {
+      left: 20px;
+      top: 85px;
+    }
+
+    .chip-two {
+      right: 20px;
+      bottom: 85px;
+    }
+
+    .status {
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      gap: 7px;
+
+      margin-top: 18px;
+
+      color: #86efac;
+
+      font-size: 0.82rem;
+    }
+
+    .dot {
+      width: 8px;
+      height: 8px;
+
+      border-radius: 50%;
+
+      background: var(--green);
+
+      box-shadow: 0 0 12px var(--green);
+    }
+
+    /* ================================
+       STATS
+    ================================= */
+
+    .stats {
+      display: grid;
+
+      grid-template-columns:
+        repeat(4, 1fr);
+
+      gap: 14px;
+
+      padding-bottom: 40px;
+    }
+
+    .stat {
+      padding: 25px;
+
+      border: 1px solid var(--line);
+
+      background: var(--card);
+
+      border-radius: 20px;
+    }
+
+    .stat strong {
+      display: block;
+
+      font: 700 2rem "Space Grotesk";
+    }
+
+    .stat span {
+      color: var(--muted);
+
+      font-size: 0.88rem;
+    }
+
+    /* ================================
+       ABOUT
+    ================================= */
+
+    .about-grid {
+      display: grid;
+
+      grid-template-columns: 0.7fr 1.3fr;
+
+      gap: 50px;
+
+      align-items: start;
+    }
+
+    .about-image {
+      border-radius: 28px;
+
+      border: 1px solid var(--line);
+
+      overflow: hidden;
+
+      background: var(--card);
+
+      box-shadow: var(--shadow);
+    }
+
+    .about-image img {
+      width: 100%;
+
+      aspect-ratio: 4 / 5;
+
+      object-fit: cover;
+    }
+
+    .about-copy p {
+      color: var(--muted);
+
+      margin-bottom: 18px;
+    }
+
+    .about-list {
+      display: grid;
+
+      grid-template-columns: 1fr 1fr;
+
+      gap: 12px;
+
+      margin-top: 25px;
+    }
+
+    .about-list div {
+      padding: 14px;
+
+      border: 1px solid var(--line);
+
+      border-radius: 15px;
+
+      background: var(--card);
+    }
+
+    .about-list b {
+      display: block;
+
+      font-size: 0.83rem;
+
+      color: var(--muted);
+
+      font-weight: 500;
+    }
+
+    .about-list span {
+      font-weight: 700;
+    }
+
+    /* ================================
+       SKILLS
+    ================================= */
+
+    .skills-grid {
+      display: grid;
+
+      grid-template-columns:
+        repeat(3, 1fr);
+
+      gap: 16px;
+    }
+
+    .skill-card {
+      padding: 24px;
+
+      border: 1px solid var(--line);
+
+      background: var(--card);
+
+      border-radius: 20px;
+
+      transition: 0.25s;
+    }
+
+    .skill-card:hover {
+      transform: translateY(-5px);
+
+      border-color:
+        rgba(139, 92, 246, 0.35);
+    }
+
+    .skill-icon {
+      width: 44px;
+      height: 44px;
+
+      display: grid;
+
+      place-items: center;
+
+      border-radius: 13px;
+
+      background:
+        rgba(139, 92, 246, 0.12);
+
+      color: #c4b5fd;
+
+      margin-bottom: 18px;
+    }
+
+    .skill-card h3 {
+      font-family: "Space Grotesk";
+
+      font-size: 1.05rem;
+
+      margin-bottom: 8px;
+    }
+
+    .skill-card p {
+      color: var(--muted);
+
+      font-size: 0.9rem;
+    }
+
+    /* ================================
+       PROJECTS
+    ================================= */
+
+    .project-grid {
+      display: grid;
+
+      grid-template-columns: repeat(2, 1fr);
+
+      gap: 20px;
+    }
+
+    .project-card {
+      overflow: hidden;
+
+      border: 1px solid var(--line);
+
+      border-radius: 10px;
+
+      background: var(--card);
+
+      transition: 0.3s;
+
+      display: flex;
+
+      flex-direction: column;
+    }
+
+    .project-card:hover {
+      transform: translateY(-7px);
+
+      box-shadow: var(--shadow);
+
+      border-color:
+        rgba(34, 211, 238, 0.28);
+    }
+
+    .project-image {
+      height: 240px;
+
+      overflow: hidden;
+
+      background: var(--bg-soft);
+    }
+
+    .project-image img {
+      width: 100%;
+      height: 100%;
+
+      object-fit: cover;
+
+      transition: 0.5s;
+    }
+
+    .project-card:hover
+    .project-image img {
+      transform: scale(1.05);
+    }
+
+    .project-body {
+      padding: 24px;
+
+      display: flex;
+
+      flex-direction: column;
+
+      flex: 1;
+    }
+
+    .project-top {
+      display: flex;
+
+      justify-content: space-between;
+
+      gap: 12px;
+    }
+
+    .project-body h3 {
+      font: 700 1.3rem "Space Grotesk";
+    }
+
+    .project-body p {
+      color: var(--muted);
+
+      font-size: 0.92rem;
+
+      margin: 12px 0 17px;
+    }
+
+    .tags {
+      display: flex;
+
+      gap: 7px;
+
+      flex-wrap: wrap;
+
+      margin-bottom: 22px;
+    }
+
+    .tag {
+      padding: 5px 9px;
+
+      border-radius: 999px;
+
+      background:
+        rgba(34, 211, 238, 0.07);
+
+      border: 1px solid var(--line);
+
+      font-size: 0.72rem;
+
+      color: #a5f3fc;
+    }
+
+    .project-links {
+      margin-top: auto;
+
+      display: flex;
+
+      gap: 10px;
+    }
+
+    .project-links a {
+      font-size: 0.84rem;
+
+      font-weight: 700;
+
+      color: #c4b5fd;
+    }
+
+    .project-links a:hover {
+      color: white;
+    }
+
+   /* ================================
+   PROJECTS
+================================= */
+
+.project-grid {
+  display: grid;
+
+  grid-template-columns: repeat(2, 440px);
+
+  justify-content: center;
+
+  gap: 20px;
+}
+
+.project-card {
+  width: 440px;
+
+  overflow: hidden;
+
+  border: 1px solid var(--line);
+
+  border-radius: 10px;
+
+  background: var(--card);
+
+  transition: 0.3s;
+
+  display: flex;
+
+  flex-direction: column;
+}
+
+.project-card:hover {
+  transform: translateY(-7px);
+
+  box-shadow: var(--shadow);
+
+  border-color: rgba(34, 211, 238, 0.28);
+}
+
+.project-image {
+  height: 200px;
+
+  overflow: hidden;
+
+  background: var(--bg-soft);
+}
+
+.project-image img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  transition: 0.5s;
+}
+
+.project-card:hover .project-image img {
+  transform: scale(1.05);
+}
+
+.project-body {
+  padding: 20px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  flex: 1;
+}
+
+.project-top {
+  display: flex;
+
+  justify-content: space-between;
+
+  gap: 12px;
+}
+
+.project-body h3 {
+  font: 700 1.3rem "Space Grotesk";
+}
+
+.project-body p {
+  color: var(--muted);
+
+  font-size: 0.9rem;
+
+  margin: 10px 0 15px;
+
+  line-height: 1.5;
+}
+
+.tags {
+  display: flex;
+
+  gap: 7px;
+
+  flex-wrap: wrap;
+
+  margin-bottom: 18px;
+}
+
+.tag {
+  padding: 5px 9px;
+
+  border-radius: 999px;
+
+  background: rgba(34, 211, 238, 0.07);
+
+  border: 1px solid var(--line);
+
+  font-size: 0.72rem;
+
+  color: #a5f3fc;
+}
+
+.project-links {
+  margin-top: auto;
+
+  display: flex;
+
+  gap: 10px;
+}
+
+.project-links a {
+  font-size: 0.84rem;
+
+  font-weight: 700;
+
+  color: #c4b5fd;
+}
+
+.project-links a:hover {
+  color: white;
+}
+
+
+/* ================================
+   RESPONSIVE
+================================= */
+
+@media (max-width: 950px) {
+  .project-grid {
+    grid-template-columns: 1fr;
+
+    justify-items: center;
+  }
+
+  .project-card {
+    width: min(440px, 100%);
+  }
+}
+
+@media (max-width: 500px) {
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project-card {
+    width: 100%;
+  }
+}
+
+    /* ================================
+       ACHIEVEMENTS
+    ================================= */
+
+    .achievement-grid {
+      display: grid;
+
+      grid-template-columns:
+        repeat(3, 1fr);
+
+      gap: 16px;
+    }
+
+    .achievement {
+      padding: 23px;
+
+      border: 1px solid var(--line);
+
+      border-radius: 20px;
+
+      background: var(--card);
+    }
+
+    .achievement i {
+      font-size: 1.3rem;
+
+      color: #fbbf24;
+
+      margin-bottom: 15px;
+    }
+
+    .achievement h3 {
+      font: 700 1rem "Space Grotesk";
+
+      margin-bottom: 7px;
+    }
+
+    .achievement p {
+      font-size: 0.87rem;
+
+      color: var(--muted);
+    }
+
+    /* ================================
+       RESUME
+    ================================= */
+
+    .resume-box {
+      padding: 45px;
+
+      border: 1px solid var(--line);
+
+      border-radius: 28px;
+
+      background:
+        linear-gradient(
+          120deg,
+          rgba(139, 92, 246, 0.13),
+          rgba(34, 211, 238, 0.06)
+        ),
+        var(--card);
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: space-between;
+
+      gap: 30px;
+    }
+
+    .resume-box h2 {
+      font: 700 2rem "Space Grotesk";
+
+      margin-bottom: 8px;
+    }
+
+    .resume-box p {
+      color: var(--muted);
+    }
+
+    /* ================================
+       CONTACT
+    ================================= */
+
+    .contact-grid {
+      display: grid;
+
+      grid-template-columns:
+        0.8fr 1.2fr;
+
+      gap: 30px;
+    }
+
+    .contact-info,
+    .contact-form {
+      padding: 30px;
+
+      border: 1px solid var(--line);
+
+      border-radius: 24px;
+
+      background: var(--card);
+    }
+
+    .contact-info h3 {
+      font: 700 1.5rem "Space Grotesk";
+
+      margin-bottom: 10px;
+    }
+
+    .contact-info > p {
+      color: var(--muted);
+
+      margin-bottom: 25px;
+    }
+
+    .contact-item {
+      display: flex;
+
+      gap: 14px;
+
+      align-items: center;
+
+      margin: 17px 0;
+
+      color: var(--muted);
+    }
+
+    .contact-item i {
+      width: 40px;
+      height: 40px;
+
+      display: grid;
+
+      place-items: center;
+
+      border-radius: 12px;
+
+      background:
+        rgba(139, 92, 246, 0.1);
+
+      color: #c4b5fd;
+    }
+
+    .socials {
+      display: flex;
+
+      gap: 10px;
+
+      margin-top: 25px;
+    }
+
+    .socials a {
+      width: 42px;
+      height: 42px;
+
+      border: 1px solid var(--line);
+
+      border-radius: 12px;
+
+      display: grid;
+
+      place-items: center;
+
+      color: var(--muted);
+
+      transition: 0.2s;
+    }
+
+    .socials a:hover {
+      color: var(--text);
+
+      transform: translateY(-2px);
+    }
+
+    .form-row {
+      display: grid;
+
+      grid-template-columns: 1fr 1fr;
+
+      gap: 14px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+
+      background: transparent;
+
+      border: 1px solid var(--line);
+
+      border-radius: 13px;
+
+      padding: 13px 14px;
+
+      color: var(--text);
+
+      outline: none;
+
+      margin-bottom: 14px;
+    }
+
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      border-color: var(--purple);
+    }
+
+    .contact-form textarea {
+      resize: vertical;
+
+      min-height: 150px;
+    }
+
+    /* ================================
+       FOOTER
+    ================================= */
+
+    footer {
+      border-top: 1px solid var(--line);
+
+      padding: 28px 0;
+
+      color: var(--muted);
+
+      text-align: center;
+
+      font-size: 0.84rem;
+    }
+
+    /* ================================
+       ANIMATIONS
+    ================================= */
+
+    .reveal {
+      opacity: 0;
+
+      transform: translateY(22px);
+
+      transition: 0.7s ease;
+    }
+
+    .reveal.show {
+      opacity: 1;
+
+      transform: none;
+    }
+
+    /* ================================
+       BACK TO TOP
+    ================================= */
+
+    .back-top {
+      position: fixed;
+
+      right: 22px;
+      bottom: 22px;
+
+      width: 45px;
+      height: 45px;
+
+      border: 1px solid var(--line);
+
+      border-radius: 14px;
+
+      background: var(--card-solid);
+
+      color: var(--text);
+
+      cursor: pointer;
+
+      opacity: 0;
+
+      pointer-events: none;
+
+      transition: 0.25s;
+
+      z-index: 50;
+    }
+
+    .back-top.visible {
+      opacity: 1;
+
+      pointer-events: auto;
+    }
+
+    /* ================================
+       RESPONSIVE
+    ================================= */
+
+    @media (max-width: 900px) {
+
+      .nav-links {
+        position: absolute;
+
+        top: 76px;
+
+        left: 20px;
+        right: 20px;
+
+        display: none;
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+        padding: 18px;
+
+        border: 1px solid var(--line);
+
+        border-radius: 18px;
+
+        background: var(--card-solid);
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .nav-links a {
+        display: block;
+
+        padding: 9px;
+      }
+
+      .menu-btn {
+        display: block;
+      }
+
+      .hero-grid,
+      .about-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding-top: 120px;
+      }
+
+      .hero-card {
+        max-width: 520px;
+
+        width: 100%;
+
+        margin: auto;
+      }
+
+      .stats {
+        grid-template-columns:
+          repeat(2, 1fr);
+      }
+
+      .skills-grid,
+      .achievement-grid {
+        grid-template-columns:
+          repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 620px) {
+
+      .container {
+        width:
+          min(
+            var(--max-width),
+            calc(100% - 28px)
+          );
+      }
+
+      .section {
+        padding: 78px 0;
+      }
+
+      .hero h1 {
+        font-size: 3.1rem;
+      }
+
+      .stats,
+      .skills-grid,
+      .project-grid,
+      .achievement-grid,
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+
+      .resume-box {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        padding: 30px;
+      }
+
+      .about-list {
+        grid-template-columns: 1fr;
+      }
+
+      .project-image {
+        height: 205px;
+      }
+
+      .hero-card {
+        min-height: 390px;
+      }
+
+      .profile-photo {
+        width: 180px;
+        height: 180px;
+      }
+    }
+
+  </style>
 </head>
+
+
 <body>
-    <div class="main">
-        <div class="nav">
-            <div class="nav-main">
-                <a href="#home" class="text">Sowjanya Thatavarthi</a>
-            </div>
-            <input type="checkbox" id="check">
-            <label for="check" class="bar">
-                <i class="fa-solid fa-bars"></i>
-            </label>
-            <div class="options">
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#project">Project</a></li>
-                    <li><a href="#skills">Skills</a></li>
-                    <li><a href="#resume">Resume</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="home" id="home">
-            <h1>Welcome to My Portfolio</h1>
-            <p>Hello! I'm Sowjanya Thatavarthi, and this is where I showcase my journey, skills, and projects.</p>
-            <img src="img.png" alt="Random Image">
-        </div>
-        <div class="abouts" id="about">
-            <h2 class="head">About Me</h2>
-            <div class="about">
-                <img src="my photo.jpeg" alt="Sowjanya Thatavarthi image">
-                <div class="about-info">
-                    <p>Hi, I'm Sowjanya Thatavarthi, a Computer Science Engineering student specializing in Cyber Security with a passion for building user-centric digital products. My journey through AI, machine learning, and full-stack development has taught me that great products are created by understanding user problems first and then leveraging technology to solve them effectively.
 
-                    </p><p>Through internships, hackathons, and academic projects, I have gained experience in collaborating with teams, analyzing requirements, and developing solutions that create real-world impact. I enjoy breaking down complex problems, making data-driven decisions, and continuously learning about product management, Agile methodologies, and customer-focused innovation.</p>
+<!-- =====================================
+     NAVBAR
+===================================== -->
 
-<p> As an aspiring Product Owner, my goal is to bridge the gap between technology, business, and user needs by building products that are intuitive, scalable, and meaningful </p>
-                    </p>
-                </div>
-            </div>
-        </div>
-        <div class="project" id="project">
-            <h2 class="head">Projects</h2>
-            <div class="project-cards">
-                <div class="card">
-                    <img src="QRX Pic.png" alt="Project 1">
-                    <div class="card-content">
-                        <h3>QRx - A Smart Health AID</h3>
-                        <p>QRx – Smart Health Aid is a user-centric healthcare platform that enables individuals to securely store and instantly share critical medical information through QR codes during emergencies. It improves accessibility to essential health records while ensuring a seamless and secure user experience.</p>
-                        <a href="https://qrx-smart-health-aid.vercel.app/" target="_blank">
-                        <i></i> Website Link
-                        </a>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="Water Quality.jpg" alt="Project 2">
-                    <div class="card-content">
-                        <h3>Water Quality Prediction</h3>
-                        <p>Focused on predicting key water quality parameters using machine learning, with the goal of early pollution detection and prompting sustainability through data-driven insights.</p>
-                        <a href="https://github.com/SowjanyaT26/WaterQualityPrediction.git" target="_blank">
-                        <i class="fab fa-github"></i> View on GitHub
-                        </a>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="encryptbox.jpeg" alt="Project 3">
-                    <div class="card-content">
-                        <h3>Encrypt Box</h3>
-                        <p>Built a secure file-sharing web app with user authentication, encrypted uploads, unique download links expiring after 24 hours, and email-based sharing with token validation</p>
-                        <a href="https://github.com/SowjanyaT26/Encrypt-Box.git" target="_blank">
-                        <i class="fab fa-github"></i> View on GitHub
-                        </a>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="feedesurio.png" alt="Project 4">
-                    <div class="card-content">
-                        <h3>Feedesurio - Desi Daan</h3>
-                        <p>It is a frontend application connecting food donors with receivers, reducing food waste by facilitating donations, volunteer work, and food distribution.</p>
-                        <a href="https://github.com/SowjanyaT26/Feedesurio---Desi-Daan.git" target="_blank">
-                        <i class="fab fa-github"></i> View on GitHub
-                        </a>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-content">
-                        <h2>Loading...</h2>
-                        <a href="" target="_blank">
-                        </a>
-                    </div>
-                </div>
-                </div>
-            </div>
-        </div>
-        <!-- Updated Skills Section -->
-        <section class="skills" id="skills">
-          <h2>My Skills</h2>
-          <p style="color: white;">       Drag to view</p>
-          <!-- Programming languages -->
-        <div class="skill-category"> 
-            <input type="checkbox" id="programskill">
-        <label for="programskill" class="category-header">Product & business</label>
-        <div class="category-content"> 
-          <p><b>Product Management, Agile Methodologies, Scrum, Product Lifecycle, Requirement Analysis, User Story Mapping, Feature Prioritization</p> 
-          </div>
-         </div>
-          <!-- Web Development Skills -->
-          <div class="skill-category">
-            <input type="checkbox" id="webdev">
-            <label for="webdev" class="category-header">Programming & Databases</label>
-            <div class="category-content">
-              <p><b>Python, Java, C, SQL, Firebase</b></p>
-              
-            </div>
-          </div>
-          <!-- Cybersecurity Skills -->
-           <div class="skill-category"> 
-              <input type="checkbox" id="cyber"> 
-              <label for="cyber" class="category-header">Web Technologies</label>
-              <div class="category-content"> 
-          <p><b>React.js, Typescript, HTML, CSS, Streamlit</b></p>   
-          </div>
-         </div>
-         <!-- Cybersecurity Skills -->
-           <div class="skill-category"> 
-              <input type="checkbox" id="cyber"> 
-              <label for="cyber" class="category-header">AI & Data Anlytics</label>
-              <div class="category-content"> 
-          <p><b>Machine Learning, Scikit-learn, Pandas, Generative AI, Prompt Engineering</b></p>   
-          </div>
-         </div>
-         <!-- Cybersecurity Skills -->
-           <div class="skill-category"> 
-              <input type="checkbox" id="cyber"> 
-              <label for="cyber" class="category-header">Tools & Platforms</label>
-              <div class="category-content"> 
-          <p><b>Git, GitHub, Vercel, VS Code</b></p>   
-          </div>
-         </div>
-          <!-- Cybersecurity Skills -->
-           <div class="skill-category"> 
-              <input type="checkbox" id="cyber"> 
-              <label for="cyber" class="category-header">Soft Skills</label>
-              <div class="category-content"> 
-          <p><b>Analytical Thinking, Problem Solving, Cross-functional Collaboration, Communication, Stakeholder Management, Teamwork</b></p>   
-          </div>
-         </div>
-          
-        </section>
-        <div class="resume" id="resume">
-            <h2>Resume</h2>
-            <p>You can view or download my resume using the options below.</p>
-            <div class="resume-buttons">
-                <a href="Sowjanya_Resume (8).pdf" class="view-btn" target="_blank">
-                    <i class="fa-solid fa-eye"></i> View Resume
-                </a>
-                <a href="Sowjanya_Resume (8).pdf" class="download-btn" download>
-                    <i class="fa-solid fa-download"></i> Download Resume
-                </a>
-            </div>
-        </div>
-        <div class="contact" id="contact">
-            <h2>Contact Me</h2>
-            <p>If you'd like to get in touch, feel free to send me a message!</p>
-            <form class="contact-form" action="https://formsubmit.co/preethikavema@gmail.com" method="POST">
-                <input type="hidden" name="_captcha" value="false">
-                <input type="hidden" name="_subject" value="New Portfolio Message">
-                <input type="hidden" name="_template" value="table">
-                <input type="text" name="name" placeholder="Your Name" required>
-                <input type="email" name="email" placeholder="Your Email" required>
-                <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-                <button type="submit">Send Message</button>
-            </form>
-            <div class="social-links">
-                <a href="https://www.linkedin.com/in/sowjanya-thatavarthi-254a882bb/" target="_blank"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
-                <a href="https://github.com/SowjanyaT26" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a>
-                <a href="mailto:Sowjanyathatavarthi2601@gmail.com"><i class="fa-solid fa-envelope"></i> Email</a>
-                <a> +91 9247700469 </a>
-            </div>
-        </div>
-        <div class="foot"></div>
+<header class="nav-wrap">
+
+  <nav class="container">
+
+    <a class="brand" href="#home">
+      Sowjanya Thatavarthi<span></span>
+    </a>
+
+    <ul class="nav-links" id="navLinks">
+
+      <li>
+        <a class="active" href="#home">
+          Home
+        </a>
+      </li>
+
+      <li>
+        <a href="#about">
+          About
+        </a>
+      </li>
+
+      <li>
+        <a href="#skills">
+          Skills
+        </a>
+      </li>
+
+      <li>
+        <a href="#projects">
+          Projects
+        </a>
+      </li>
+
+      <li>
+        <a href="#experience">
+          Experience
+        </a>
+      </li>
+
+      <li>
+        <a href="#achievements">
+          Achievements
+        </a>
+      </li>
+
+      <li>
+        <a href="#contact">
+          Contact
+        </a>
+      </li>
+
+    </ul>
+
+    <div class="nav-actions">
+
+      <button
+        class="icon-btn"
+        id="themeToggle"
+        aria-label="Toggle theme"
+      >
+        <i class="fa-solid fa-moon"></i>
+      </button>
+
+      <button
+        class="menu-btn"
+        id="menuBtn"
+        aria-label="Open menu"
+      >
+        <i class="fa-solid fa-bars"></i>
+      </button>
+
     </div>
-    <footer>
-        <p class="footer">&copy; 2026 Sowjanya Thatavarthi. All rights reserved.</p>
-    </footer>
+
+  </nav>
+
+</header>
+
+
+<main>
+
+
+<!-- =====================================
+     HERO
+===================================== -->
+
+<section class="hero" id="home">
+
+  <div class="container hero-grid">
+
+    <div class="reveal">
+
+      <span class="eyebrow">
+
+        <i class="fa-solid fa-sparkles"></i>
+
+        AI | Product | Engineering
+
+      </span>
+
+
+      <h1>
+
+        Building digital products that
+
+        <span class="gradient-text">
+          solve real problems.
+        </span>
+
+      </h1>
+
+
+      <p class="hero-copy">
+
+        Hi, I'm Sowjanya — a Computer Science student
+        specializing in Cyber Security, passionate about
+        AI/ML, full-stack development and user-focused
+        product thinking.
+
+      </p>
+
+
+      <div class="hero-buttons">
+
+        <a
+          class="btn btn-primary"
+          href="#projects"
+        >
+
+          Explore My Work
+
+          <i class="fa-solid fa-arrow-right"></i>
+
+        </a>
+
+
+        <a
+          class="btn btn-secondary"
+          href="TSowjanya_Resume.pdf"
+          target="_blank"
+        >
+
+          <i class="fa-solid fa-file-arrow-down"></i>
+
+          Resume
+
+        </a>
+
+      </div>
+
+
+      <div class="hero-meta">
+
+        <span>
+
+          <i class="fa-solid fa-location-dot"></i>
+
+          Andhra Pradesh, India
+
+        </span>
+
+
+        <span>
+
+          <i class="fa-solid fa-graduation-cap"></i>
+
+          B.Tech CSE — Cyber Security
+
+        </span>
+
+      </div>
+
+    </div>
+
+
+    <!-- PROFILE CARD -->
+
+    <div class="hero-card reveal">
+
+      <span class="floating-chip chip-one">
+
+        <i class="fa-solid fa-code"></i>
+
+        
+
+      </span>
+
+
+      <span class="floating-chip chip-two">
+
+        <i class="fa-solid fa-brain"></i>
+
+        
+
+      </span>
+
+
+      <img
+        src="image.png"
+        alt="Sowjanya Thatavarthi"
+        class="profile-photo"
+      >
+
+
+      <h3>
+        Sowjanya Thatavarthi
+      </h3>
+
+
+      <p>
+        Developer • Product Thinker • Problem Solver
+      </p>
+
+
+      <div class="status">
+
+        <span class="dot"></span>
+
+        Open to opportunities
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================
+     STATS
+===================================== -->
+
+<section class="container stats reveal">
+
+  <div class="stat">
+
+    <strong>
+      5+
+    </strong>
+
+    <span>
+      Projects Built
+    </span>
+
+  </div>
+
+
+  <div class="stat">
+
+    <strong>
+      Software Engineer
+    </strong>
+
+    <span>
+      Core Interest
+    </span>
+
+  </div>
+
+
+  <div class="stat">
+
+    <strong>
+      Cyber Security
+    </strong>
+
+    <span>
+      Specialization
+    </span>
+
+  </div>
+
+
+  <div class="stat">
+
+    <strong>
+      2027
+    </strong>
+
+    <span>
+      Graduation
+    </span>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================
+     ABOUT
+===================================== -->
+
+<section
+  class="section"
+  id="about"
+>
+
+  <div class="container">
+
+    <div class="section-head reveal">
+
+      <span class="eyebrow">
+        01 — About
+      </span>
+
+
+      <h2>
+
+        Technology with a
+
+        <span class="gradient-text">
+          product mindset.
+        </span>
+
+      </h2>
+
+
+      <p>
+
+        I enjoy connecting technical execution
+        with user needs, measurable outcomes
+        and thoughtful product decisions.
+
+      </p>
+
+    </div>
+
+
+    <div class="about-grid">
+
+
+      <div class="about-image reveal">
+
+        <img
+          src="my photo.jpeg"
+          alt="Sowjanya Thatavarthi"
+        >
+
+      </div>
+
+
+      <div class="about-copy reveal">
+
+        <p>
+
+          I'm a Computer Science Engineering student
+          specializing in Cyber Security with a strong
+          interest in AI/ML, full-stack development
+          and product management.
+
+        </p>
+
+
+        <p>
+
+          I like starting with the problem,
+          understanding the user, and then choosing
+          the technology that creates the most useful
+          solution.
+
+        </p>
+
+
+        <p>
+
+          Through internships, hackathons, technical
+          presentations and academic projects, I've
+          worked on healthcare, sustainability,
+          secure file sharing and food donation
+          use cases.
+
+        </p>
+
+
+        <p>
+
+          My long-term goal is to bridge technology,
+          business and user needs by building
+          intuitive, scalable and meaningful
+          digital products.
+
+        </p>
+
+
+        <div class="about-list">
+
+          <div>
+
+            <b>
+              Focus
+            </b>
+
+            <span>
+              Software Development & Product
+            </span>
+
+          </div>
+
+
+          <div>
+
+            <b>
+              Education
+            </b>
+
+            <span>
+              B.Tech CSE — Cyber Security
+            </span>
+
+          </div>
+
+
+          <div>
+
+            <b>
+              Strength
+            </b>
+
+            <span>
+              Problem Solving
+            </span>
+
+          </div>
+
+
+          <div>
+
+            <b>
+              Mindset
+            </b>
+
+            <span>
+              Build • Measure • Learn
+            </span>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================
+     SKILLS
+===================================== -->
+
+<section
+  class="section"
+  id="skills"
+>
+
+  <div class="container">
+
+    <div class="section-head reveal">
+
+      <span class="eyebrow">
+        02 — Skills
+      </span>
+
+
+      <h2>
+
+        My
+
+        <span class="gradient-text">
+          toolkit.
+        </span>
+
+      </h2>
+
+
+      <p>
+        A practical mix of engineering,
+        AI/data and product skills.
+      </p>
+
+    </div>
+
+
+    <div class="skills-grid">
+
+
+      <article class="skill-card reveal">
+
+        <div class="skill-icon">
+
+          <i class="fa-solid fa-code"></i>
+
+        </div>
+
+        <h3>
+          Programming Languages
+        </h3>
+
+        <p>
+          Java, Python(Basic)
+        </p>
+
+      </article>
+
+
+
+      <article class="skill-card reveal">
+
+        <div class="skill-icon">
+
+          <i class="fa-solid fa-layer-group"></i>
+
+        </div>
+
+        <h3>
+          Software Development
+        </h3>
+
+        <p>
+          Data Structures & Algorithms, OOP, Git, GitHub
+        </p>
+
+      </article>
+
+
+
+      <article class="skill-card reveal">
+
+        <div class="skill-icon">
+
+          <i class="fa-solid fa-brain"></i>
+
+        </div>
+
+        <h3>
+          Web & Deployment
+        </h3>
+
+        <p>
+          HTML, CSS, Streamlit, Vercel, Render, VS Code
+        </p>
+
+      </article>
+
+
+
+      <article class="skill-card reveal">
+
+        <div class="skill-icon">
+
+          <i class="fa-solid fa-shield-halved"></i>
+
+        </div>
+
+        <h3>
+          Cyber Security
+        </h3>
+
+        <p>
+          Wireshark Basics, Kali Linux, Phishing Detection
+        </p>
+
+      </article>
+
+
+
+      <article class="skill-card reveal">
+
+        <div class="skill-icon">
+
+          <i class="fa-solid fa-cloud"></i>
+
+        </div>
+
+        <h3>
+          Databases & Cloud
+        </h3>
+
+        <p>
+          SQL, Firebase, Google Cloud, Salesforce Trailhead
+        </p>
+
+      </article>
+
+
+
+      <article class="skill-card reveal">
+
+        <div class="skill-icon">
+
+          <i class="fa-solid fa-chart-line"></i>
+
+        </div>
+
+        <h3>
+            Soft skills
+        </h3>
+
+        <p>
+          Analytical Thinking, Problem Solving, Team Collaboration
+        </p>
+
+      </article>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================
+     PROJECTS
+===================================== -->
+
+<section
+  class="section"
+  id="projects"
+>
+
+  <div class="container">
+
+    <div class="section-head reveal">
+
+      <span class="eyebrow">
+        03 — Projects
+      </span>
+
+
+      <h2>
+
+        Things I've
+
+        <span class="gradient-text">
+          built.
+        </span>
+
+      </h2>
+
+
+      <p>
+        Selected projects where technology
+        meets a real-world use case.
+      </p>
+
+    </div>
+
+
+    <div class="project-grid">
+
+       <!-- ENCRYPT BOX -->
+
+      <article class="project-card reveal">
+
+        <div class="project-body">
+
+          <div class="project-top">
+
+            <h1>
+              Something is Cooking !!
+            </h1>
+            
+
+          </div>
+
+
+
+        </div>
+
+      </article>
+
+
+
+
+
+      <!-- QRx -->
+
+      <article class="project-card reveal">
+
+        <div class="project-image">
+
+          <img
+            src="QRX Pic.png"
+            alt="QRx Smart Health Aid"
+          >
+
+        </div>
+
+
+        <div class="project-body">
+
+          <div class="project-top">
+
+            <h3>
+              QRx — Smart Health Aid
+            </h3>
+
+            <i class="fa-solid fa-heart-pulse"></i>
+
+          </div>
+
+
+          <p>
+
+            Emergency health profile platform
+            that securely stores critical medical
+            information and makes it accessible
+            through a QR code.
+
+          </p>
+
+
+          <div class="tags">
+
+            <span class="tag">
+              React
+            </span>
+
+            <span class="tag">
+              TypeScript
+            </span>
+
+            <span class="tag">
+              Firebase
+            </span>
+
+            <span class="tag">
+              QR
+            </span>
+
+          </div>
+
+
+          <div class="project-links">
+
+            <a
+              href="https://qrx-smart-health-aid.vercel.app/"
+              target="_blank"
+            >
+
+              Live Demo ↗
+
+            </a>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+
+      <!-- WATER QUALITY -->
+
+      <article class="project-card reveal">
+
+        <div class="project-image">
+
+          <img
+            src="Water Quality.jpg"
+            alt="Water Quality Prediction"
+          >
+
+        </div>
+
+
+        <div class="project-body">
+
+          <div class="project-top">
+
+            <h3>
+              Water Quality Prediction
+            </h3>
+
+            <i class="fa-solid fa-chart-simple"></i>
+
+          </div>
+
+
+          <p>
+
+            Machine-learning solution for
+            predicting key water quality
+            parameters and supporting early,
+            data-driven pollution detection.
+
+          </p>
+
+
+          <div class="tags">
+
+            <span class="tag">
+              Python
+            </span>
+
+            <span class="tag">
+              Pandas
+            </span>
+
+            <span class="tag">
+              Scikit-learn
+            </span>
+
+            <span class="tag">
+              Streamlit
+            </span>
+
+          </div>
+
+
+          <div class="project-links">
+
+            <a
+              href="https://water-quality-prediction.vercel.app/"
+              target="_blank"
+            >
+
+              Live Demo
+
+            </a>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+
+      <!-- ENCRYPT BOX -->
+
+      <article class="project-card reveal">
+
+        <div class="project-image">
+
+          <img
+            src="encryptbox.jpeg"
+            alt="Encrypt Box"
+          >
+
+        </div>
+
+
+        <div class="project-body">
+
+          <div class="project-top">
+
+            <h3>
+              Encrypt Box
+            </h3>
+
+            <i class="fa-solid fa-lock"></i>
+
+          </div>
+
+
+          <p>
+
+            Secure file-sharing web application
+            with authentication, encrypted uploads,
+            expiring download links and
+            token-based sharing.
+
+          </p>
+
+
+          <div class="tags">
+
+            <span class="tag">
+              Node.js
+            </span>
+
+            <span class="tag">
+              Express
+            </span>
+
+            <span class="tag">
+              MongoDB
+            </span>
+
+            <span class="tag">
+              JWT
+            </span>
+
+          </div>
+
+
+          <div class="project-links">
+
+            <a
+              href="https://github.com/SowjanyaT26/Encrypt-Box.git"
+              target="_blank"
+            >
+
+              GitHub ↗
+
+            </a>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+
+      <!-- FEEDESURIO -->
+
+      <article class="project-card reveal">
+
+        <div class="project-image">
+
+          <img
+            src="feedesurio.png"
+            alt="Feedesurio Desi Daan"
+          >
+
+        </div>
+
+
+        <div class="project-body">
+
+          <div class="project-top">
+
+            <h3>
+              Feedesurio — Desi Daan
+            </h3>
+
+            <i class="fa-solid fa-utensils"></i>
+
+          </div>
+
+
+          <p>
+
+            Food-donation platform connecting
+            donors, volunteers and receivers
+            to reduce food waste and improve
+            distribution.
+
+          </p>
+
+
+          <div class="tags">
+
+            <span class="tag">
+              HTML
+            </span>
+
+            <span class="tag">
+              CSS
+            </span>
+
+            <span class="tag">
+              JavaScript
+            </span>
+
+            
+
+          </div>
+
+
+          <div class="project-links">
+
+            <a
+              href="https://github.com/SowjanyaT26/Feedesurio---Desi-Daan.git"
+              target="_blank"
+            >
+
+              GitHub ↗
+
+            </a>
+
+          </div>
+
+        </div>
+
+      </article>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+
+       
+
+
+        
+
+
+
+<!-- =====================================
+     EXPERIENCE
+===================================== -->
+
+<section
+  class="section"
+  id="experience"
+>
+
+  <div class="container">
+
+    <div class="section-head reveal">
+
+      <span class="eyebrow">
+        04 — Experience
+      </span>
+
+
+      <h2>
+
+        Learning by
+
+        <span class="gradient-text">
+          doing.
+        </span>
+
+      </h2>
+
+    </div>
+
+
+    <div class="timeline">
+
+
+      <article class="timeline-item reveal">
+
+        <span class="timeline-dot"></span>
+
+        <span class="date">
+          Research & Development
+        </span>
+
+        <h3>
+          R&D Associate — Code Aurora
+        </h3>
+
+        <p>
+
+          Worked on healthcare-focused data
+          and research workflows, including
+          analysis of healthcare records and
+          extracting actionable insights.
+
+        </p>
+
+      </article>
+
+      <p> </p> <br>
+
+      <article class="timeline-item reveal">
+
+        <span class="timeline-dot"></span>
+
+        <span class="date">
+          AI / ML Internship
+        </span>
+
+        <h3>
+          AI/ML Intern — Edunet Foundation
+        </h3>
+
+        <p>
+
+          Built practical understanding of
+          machine learning workflows,
+          data preparation and
+          model-driven problem solving.
+
+        </p>
+
+      </article>
+
+      <br>
+
+      <article class="timeline-item reveal">
+
+        <span class="timeline-dot"></span>
+
+        <span class="date">
+          Community & Leadership
+        </span>
+
+        <h3>
+          Google Student Ambassador
+        </h3>
+
+        <p>
+
+          Engaged with student communities
+          around technology, learning resources
+          and developer-focused initiatives.
+
+        </p>
+
+      </article>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================
+     ACHIEVEMENTS
+===================================== -->
+
+<section
+  class="section"
+  id="achievements"
+>
+
+  <div class="container">
+
+    <div class="section-head reveal">
+
+      <span class="eyebrow">
+        05 — Highlights
+      </span>
+
+
+      <h2>
+
+        Beyond the
+
+        <span class="gradient-text">
+          code.
+        </span>
+
+      </h2>
+
+    </div>
+
+
+    <div class="achievement-grid">
+
+      <article class="achievement reveal">
+
+    <i class="fa-solid fa-award"></i>
+
+    <h3>
+        Datadog Scholar — SWE 2026–27
+    </h3>
+
+    <p>
+        Awarded the $1,000 Datadog Scholarship by the
+        Society of Women Engineers (SWE) for the 2026–27 academic year.
+    </p>
+
+    </article>
+
+
+
+
+      <article class="achievement reveal">
+
+        <i class="fa-solid fa-award"></i>
+
+        <h3>
+          Foundation For Excellence Scholar
+        </h3>
+
+        <p>
+          Selected for the FFE scholarship
+          and Lenovo laptop support.
+        </p>
+
+      </article>
+
+
+
+      <article class="achievement reveal">
+
+        <i class="fa-solid fa-trophy"></i>
+
+        <h3>
+          Special Jury — Technical Paper
+        </h3>
+
+        <p>
+          Recognized for a technical paper
+          presentation on Cyber Crime and Protection.
+        </p>
+
+      </article>
+
+
+
+      <article class="achievement reveal">
+
+        <i class="fa-solid fa-users"></i>
+
+        <h3>
+          Cyber Workshop Resource Person
+        </h3>
+
+        <p>
+          Conducted a cyber-focused workshop
+          and shared technical knowledge with juniors.
+        </p>
+
+      </article>
+
+
+
+      <article class="achievement reveal">
+
+        <i class="fa-solid fa-robot"></i>
+
+        <h3>
+          2 x Salesforce Agent Blazer Champion
+        </h3>
+
+        <p>
+          Completed Agentforce-focused
+          Salesforce learning and badge milestones in 2025 and 2026.
+        </p>
+
+      </article>
+
+      <article class="achievement reveal">
+
+        <i class="fa-solid fa-people-group"></i>
+
+        <h3>
+          Hackathons & Mentoring
+        </h3>
+
+        <p>
+          Participated in technical hackathons
+          and Amazon-focused mentoring activities.
+        </p>
+
+      </article>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================
+     RESUME
+===================================== -->
+
+<section
+  class="section"
+  id="resume"
+>
+
+  <div class="container">
+
+    <div class="resume-box reveal">
+
+      <div>
+
+        <span class="eyebrow">
+          06 — Resume
+        </span>
+
+        <h2>
+          Let's build something meaningful.
+        </h2>
+
+        <p>
+          View my latest resume for my
+          education, skills, projects and experience.
+        </p>
+
+      </div>
+
+
+      <div class="hero-buttons">
+
+        <a
+          class="btn btn-primary"
+          href="TSowjanya_Resume.pdf"
+          target="_blank"
+        >
+
+          <i class="fa-solid fa-eye"></i>
+
+          View Resume
+
+        </a>
+
+
+        <a
+          class="btn btn-secondary"
+          href="Sowjanya_Resume (8).pdf"
+          download
+        >
+
+          <i class="fa-solid fa-download"></i>
+
+          Download
+
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================
+     CONTACT
+===================================== -->
+
+<section
+  class="section"
+  id="contact"
+>
+
+  <div class="container">
+
+    <div class="section-head reveal">
+
+      <span class="eyebrow">
+        07 — Contact
+      </span>
+
+
+      <h2>
+
+        Have an idea?
+
+        <span class="gradient-text">
+          Let's talk.
+        </span>
+
+      </h2>
+
+
+      <p>
+
+        I'm open to internships, projects,
+        collaborations and meaningful conversations.
+
+      </p>
+
+    </div>
+
+
+    <div class="contact-grid">
+
+
+      <!-- CONTACT INFO -->
+
+      <div class="contact-info reveal">
+
+        <h3>
+          Get in touch
+        </h3>
+
+        <p>
+          The fastest way to reach me is
+          through email or LinkedIn.
+        </p>
+
+
+        <div class="contact-item">
+
+          <i class="fa-solid fa-envelope"></i>
+
+          <a
+            href="mailto:Sowjanyathatavarthi2601@gmail.com"
+          >
+
+            Sowjanyathatavarthi2601@gmail.com
+
+          </a>
+
+        </div>
+
+
+        <div class="contact-item">
+
+          <i class="fa-solid fa-location-dot"></i>
+
+          <span>
+            Andhra Pradesh, India
+          </span>
+
+        </div>
+
+
+        <div class="socials">
+
+          <a
+            href="https://www.linkedin.com/in/sowjanya-thatavarthi-254a882bb/"
+            target="_blank"
+          >
+
+            <i class="fa-brands fa-linkedin-in"></i>
+
+          </a>
+
+
+          <a
+            href="https://github.com/SowjanyaT26"
+            target="_blank"
+          >
+
+            <i class="fa-brands fa-github"></i>
+
+          </a>
+
+
+          <a
+            href="mailto:Sowjanyathatavarthi2601@gmail.com"
+          >
+
+            <i class="fa-solid fa-envelope"></i>
+
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <!-- CONTACT FORM -->
+
+      <form
+        class="contact-form reveal"
+        action="https://formsubmit.co/preethikavema@gmail.com"
+        method="POST"
+      >
+
+        <input
+          type="hidden"
+          name="_captcha"
+          value="false"
+        >
+
+        <input
+          type="hidden"
+          name="_subject"
+          value="New Portfolio Message"
+        >
+
+        <input
+          type="hidden"
+          name="_template"
+          value="table"
+        >
+
+
+        <div class="form-row">
+
+          <input
+            type="text"
+            name="name"
+            placeholder="Your name"
+            required
+          >
+
+          <input
+            type="email"
+            name="email"
+            placeholder="Your email"
+            required
+          >
+
+        </div>
+
+
+        <textarea
+          name="message"
+          placeholder="Tell me about your idea..."
+          required
+        ></textarea>
+
+
+        <button
+          class="btn btn-primary"
+          type="submit"
+        >
+
+          Send Message
+
+          <i class="fa-solid fa-paper-plane"></i>
+
+        </button>
+
+      </form>
+
+    </div>
+
+  </div>
+
+</section>
+
+</main>
+
+
+
+<!-- =====================================
+     FOOTER
+===================================== -->
+
+<footer>
+
+  <div class="container">
+
+    © 2026 Sowjanya Thatavarthi ·
+    Designed & built with intention.
+
+  </div>
+
+</footer>
+
+
+
+<!-- BACK TO TOP -->
+
+<button
+  class="back-top"
+  id="backTop"
+  aria-label="Back to top"
+>
+
+  <i class="fa-solid fa-arrow-up"></i>
+
+</button>
+
+
+
+<!-- =====================================
+     JAVASCRIPT
+===================================== -->
+
+<script>
+
+  /* ================================
+     MOBILE MENU
+  ================================= */
+
+  const menuBtn =
+    document.getElementById("menuBtn");
+
+  const navLinks =
+    document.getElementById("navLinks");
+
+
+  menuBtn.addEventListener(
+    "click",
+    () => {
+
+      navLinks.classList.toggle("open");
+
+    }
+  );
+
+
+  document
+    .querySelectorAll(".nav-links a")
+    .forEach(link => {
+
+      link.addEventListener(
+        "click",
+        () => {
+
+          navLinks.classList.remove("open");
+
+        }
+      );
+
+    });
+
+
+
+  /* ================================
+     DARK / LIGHT MODE
+  ================================= */
+
+  const themeToggle =
+    document.getElementById("themeToggle");
+
+
+  themeToggle.addEventListener(
+    "click",
+    () => {
+
+      document.body.classList.toggle("light");
+
+
+      if (
+        document.body.classList.contains("light")
+      ) {
+
+        themeToggle.innerHTML =
+          '<i class="fa-solid fa-sun"></i>';
+
+      } else {
+
+        themeToggle.innerHTML =
+          '<i class="fa-solid fa-moon"></i>';
+
+      }
+
+    }
+  );
+
+
+
+  /* ================================
+     SCROLL ANIMATION
+  ================================= */
+
+  const observer =
+    new IntersectionObserver(
+      entries => {
+
+        entries.forEach(entry => {
+
+          if (entry.isIntersecting) {
+
+            entry.target.classList.add("show");
+
+          }
+
+        });
+
+      },
+      {
+        threshold: 0.12
+      }
+    );
+
+
+  document
+    .querySelectorAll(".reveal")
+    .forEach(element => {
+
+      observer.observe(element);
+
+    });
+
+
+
+  /* ================================
+     ACTIVE NAV LINK
+  ================================= */
+
+  window.addEventListener(
+    "scroll",
+    () => {
+
+      const backTop =
+        document.getElementById("backTop");
+
+
+      if (window.scrollY > 500) {
+
+        backTop.classList.add("visible");
+
+      } else {
+
+        backTop.classList.remove("visible");
+
+      }
+
+
+      const sections =
+        document.querySelectorAll(
+          "main section[id]"
+        );
+
+
+      let current = "home";
+
+
+      sections.forEach(section => {
+
+        if (
+          window.scrollY >=
+          section.offsetTop - 140
+        ) {
+
+          current = section.id;
+
+        }
+
+      });
+
+
+      document
+        .querySelectorAll(".nav-links a")
+        .forEach(link => {
+
+          link.classList.toggle(
+            "active",
+            link.getAttribute("href") ===
+            "#" + current
+          );
+
+        });
+
+    }
+  );
+
+
+
+  /* ================================
+     BACK TO TOP
+  ================================= */
+
+  const backTop =
+    document.getElementById("backTop");
+
+
+  backTop.addEventListener(
+    "click",
+    () => {
+
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+
+    }
+  );
+
+</script>
+
+
 </body>
-</html> 
+</html>
